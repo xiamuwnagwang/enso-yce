@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title description">
+  <title id="title">YCE</title>
+  <desc id="description">Y 形上下文汇聚标记</desc>
+  <defs>
+    <linearGradient id="surface" x1="40" y1="20" x2="220" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E261F" />
+      <stop offset="0.55" stop-color="#1C1713" />
+      <stop offset="1" stop-color="#120E0B" />
+    </linearGradient>
+    <linearGradient id="rim" x1="16" y1="16" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E8AA78" stop-opacity="0.72" />
+      <stop offset="0.55" stop-color="#C97A45" stop-opacity="0.42" />
+      <stop offset="1" stop-color="#8B5230" stop-opacity="0.28" />
+    </linearGradient>
+    <linearGradient id="yMark" x1="62" y1="54" x2="194" y2="210" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7D6BA" />
+      <stop offset="0.48" stop-color="#E8AA78" />
+      <stop offset="1" stop-color="#C97A45" />
+    </linearGradient>
+    <linearGradient id="yGlow" x1="128" y1="60" x2="128" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F0C49A" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#C97A45" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="62" fill="url(#surface)" />
+  <rect x="13" y="13" width="230" height="230" rx="57" fill="none" stroke="url(#rim)" stroke-width="4.5" />
+  <path d="M48 78C68 42 188 42 208 78" fill="none" stroke="url(#yGlow)" stroke-width="18" stroke-linecap="round" opacity="0.55" />
+  <path d="M62 64L128 130L194 64M128 130V198" fill="none" stroke="url(#yMark)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "yce.enhance",
+  "name": "YCE Prompt Enhance",
+  "version": "0.1.1",
+  "description": "YCE 提示词增强：复用宿主已配置的 yce-mcp，在输入框一键将模糊草稿改写为清晰、结构化的提示词。",
+  "icon": "icon.svg",
+  "engines": { "enso": ">=0.2.13" },
+  "main": "main.mjs",
+  "renderer": "ui.js",
+  "permissions": ["ui.slot", "composer.draft", "mcp.call", "ui.clipboard"],
+  "mcp": { "tools": ["yce_enhance", "yce_read_result"] },
+  "contributes": {
+    "methods": [{ "name": "enhance", "timeoutMs": 120000 }],
+    "configuration": [
+      {
+        "key": "server",
+        "title": "MCP 服务",
+        "description": "可选，填写提供 yce_enhance 与 yce_read_result 的 MCP 服务名称。留空时优先匹配名称含 \"yce\" 的服务，否则使用第一个可用服务。"
+      },
+      {
+        "key": "language",
+        "type": "enum",
+        "title": "输出语言",
+        "description": "增强后提示词的目标语言。auto 跟随输入草稿语言。",
+        "options": ["auto", "zh-CN", "en-US"],
+        "default": "auto"
+      },
+      {
+        "key": "enhanceBackend",
+        "type": "enum",
+        "title": "增强后端",
+        "description": "default 沿用 yce-mcp 环境变量；relay 使用 YCE_RELAY_TOKEN 走云端增强；local 走本地模型或 CLI。",
+        "options": ["default", "relay", "local"],
+        "default": "default"
+      }
+    ]
+  }
+}
