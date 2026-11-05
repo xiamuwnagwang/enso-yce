@@ -1,7 +1,6 @@
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { describe, it } from 'node:test'
-import React from 'react'
 import {
   STATUS_CLEAR_MS,
   STYLE,
@@ -12,6 +11,14 @@ import {
   onLoad,
   pickLocale,
 } from '../ui.js'
+
+const React = {
+  createElement: (type, props, ...children) => ({ type, props, children }),
+  useState: (init) => [typeof init === 'function' ? init() : init, () => {}],
+  useEffect: () => {},
+  useRef: (init) => ({ current: init }),
+  useCallback: (fn) => fn,
+}
 
 const uiSource = readFileSync(new URL('../ui.js', import.meta.url), 'utf8')
 

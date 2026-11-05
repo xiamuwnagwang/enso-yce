@@ -104,9 +104,10 @@
 
 ## 4. 本地测试
 
+零外部依赖，直接使用 Node.js 内置测试运行器即可：
+
 ```bash
-npm install
-npm test
+node --test
 ```
 
 ## License

@@ -14,9 +14,6 @@
     "url": "https://github.com/xiamuwnagwang/enso-yce/issues"
   },
   "scripts": {
-    "test": "node --test test/enso-enhance.test.mjs test/enso-ui.test.mjs"
-  },
-  "devDependencies": {
-    "react": "^19.0.0"
+    "test": "node --test"
   }
 }
